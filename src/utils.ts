@@ -5,5 +5,5 @@ export const findGroupByName = async (
   groupName: string
 ): Promise<Chat | undefined> => {
   const chats = await client.getChats();
-return chats.find((chat) => chat.name === groupName);
+  return chats.find((chat) => chat.name.includes(groupName));
 };

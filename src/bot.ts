@@ -18,7 +18,7 @@ export const startBot = (): void => {
   client.on("ready", async () => {
     console.log("✅ Client is ready!");
 
-    const groupName = GROUP_NAME; // Change this to your group name
+    const groupName = GROUP_NAME;
     const groupChat = await findGroupByName(client, groupName);
 
     if (groupChat) {
@@ -26,7 +26,11 @@ export const startBot = (): void => {
     } else {
       console.log("❌ Group not found!");
     }
+    setTimeout(async () => {
+      await client.destroy();
+      console.log("✅ Client closed.");
+    }, 5000);
   });
 
   client.initialize();
-}
+};
