@@ -4,8 +4,8 @@ package-lock.json
 
 # TypeScript build output
 dist/
-*.js
-*.js.map
+# *.js
+# *.js.map
 
 # VSCode settings
 .vscode/
